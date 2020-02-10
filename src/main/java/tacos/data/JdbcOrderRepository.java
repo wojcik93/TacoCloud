@@ -10,12 +10,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import lombok.extern.slf4j.Slf4j;
 import tacos.Order;
 import tacos.Taco;
-import tacos.web.OrderController;
 
 @Slf4j
 @Repository
@@ -43,7 +40,6 @@ public class JdbcOrderRepository implements OrderRepository {
 	}
 	
 	private long saveOrderDetails(Order order) {
-		@SuppressWarnings("unchecked")
 		Map<String, Object> values = new HashMap<>();
 		values.put("deliveryName", order.getName());
 		values.put("deliveryStreet", order.getStreet());
