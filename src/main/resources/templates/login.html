@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<title>Aplikacja Taco Cloud</title>
+		<link rel="stylesheet" th:href="@{/style.css}" />
+	</head>
+	
+	<body>
+		<h1>Logowanie</h1>
+		<img th:src="@{/images/TacoCloud.png}"/>
+		
+		<div th:if="${error}">
+			Logowanie nieudane. Sprawdz poprawnosc nazwy uzytkownika i hasla.
+		</div>
+		
+		<p>Jestes nowy? Kliknij <a th:ref="@{/register}">tutaj</a>, aby sie zarejestrowac.</p>
+		
+		<form method="POST" action="/login" id="loginForm">
+			<label for="username">Nazwa uzytkownika: </label>
+			<input type="text" name="username" id="username"/><br/>
+			
+			<label for="password">Haslo: </label>
+			<input type="password" name="password" id="password"/><br/>
+			
+			<input type="submit" value="Zaloguj"/>
+			
+			<input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+		</form>
+	</body>
+</html>

@@ -9,5 +9,11 @@
 	<body>
 		<h1>Witaj w...</h1>
 		<img th:src="@{/images/TacoCloud.png}"/>
+		
+		<form method="POST" action="/logout">
+			<input type="submit" value="wyloguj"/>
+			
+			<input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+		</form>
 	</body>
 </html>
