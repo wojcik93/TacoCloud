@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import tacos.User;
+import tacos.Client;
 import tacos.data.UserRepository;
 
 @Service
@@ -21,11 +21,11 @@ public class UserRepositoryUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = userRepo.findByUsername(username);
+		Client user = userRepo.findByUsername(username);
 		if(user != null) {
 			return user;
 		}
-		throw new UsernameNotFoundException("Uzytkownik '" + username + "'nie zostal znaleziony.");
+		throw new UsernameNotFoundException("Uzytkownik '" + username + "' nie zostal znaleziony.");
 	}
 
 }

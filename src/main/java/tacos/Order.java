@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,7 +31,7 @@ public class Order {
 	private Date placedAt;
 	
 	@ManyToOne
-	private User user;
+	private Client user;
 	
 	@ManyToMany(targetEntity=Taco.class)
 	private List<Taco> tacos = new ArrayList<>();

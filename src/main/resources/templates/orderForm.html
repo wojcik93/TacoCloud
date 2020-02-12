@@ -80,6 +80,7 @@
 			<br/>
 			
 			<input type="submit" value="Złóż zamówienie"/>
+			<input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
 		</form>
 	</body>
 </html>

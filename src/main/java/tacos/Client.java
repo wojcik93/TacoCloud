@@ -17,11 +17,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
+
 @Entity
 @Data
 @NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
 @RequiredArgsConstructor
-public class User implements UserDetails{
+public class Client implements UserDetails{
 	public static final long serialVersionUID = 1L;
 	
 	@Id
@@ -35,23 +36,11 @@ public class User implements UserDetails{
 	private final String city;
 	private final String state;
 	private final String zip;
-	private final String phoneNumber;
+	private final String phone;
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
-	}
-
-	@Override
-	public String getPassword() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getUsername() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override

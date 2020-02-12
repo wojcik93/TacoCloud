@@ -43,7 +43,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 					.loginPage("/login")
 			.and()
 				.logout()
-					.logoutSuccessUrl("/");
+					.logoutSuccessUrl("/")
+			.and()
+				.csrf();
 		
 		/* Mozliwosc wejscia w design i orders tylko we wtorki
 		 * .antMatchers("/design", "/orders") .access("hasRole('ROLE_USER') && " +

@@ -31,7 +31,7 @@ import tacos.data.TacoRepository;
 public class DesignTacoController {
 	
 	private final IngredientRepository ingredientRepo;
-	private final TacoRepository designRepo;
+	private TacoRepository designRepo;
 	
 	@Autowired
 	public DesignTacoController(IngredientRepository ingredientRepo, TacoRepository tacoRepo) {
